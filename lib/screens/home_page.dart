@@ -17,30 +17,5 @@ class MyHomePage extends StatelessWidget{
                   return SecondScreen();
                 }
                 ));
-              },
-            ),
+    
 
-           
-        //body in app bar
-        body: TabBarView(
-          children: [
-            tab1(),
-            Icon(Icons.directions_transit),
-            Icon(Icons.directions_bike),
-          ],
-          
-        ),
-        
-
-       ),
-     );
-    }
-}
-
-Widget tab1(){
-  return Container(
-    child: Center(
-      child: Text("tab1"),
-    ),
-  );
-}
