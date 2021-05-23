@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-
-import 'screens/home_page.dart';
-
+import 'views/home.dart';
 
 void main() {
   runApp(MyApp());  
@@ -32,7 +30,7 @@ class MyApp extends StatelessWidget {
 
       debugShowCheckedModeBanner:false ,//delete banner in appbar
 
-      home: MyHomePage(),//call my home page
+      home: Home(),//call my home page
     );
   }
 
