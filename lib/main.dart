@@ -30,7 +30,18 @@ class MyApp extends StatelessWidget {
 
       debugShowCheckedModeBanner:false ,//delete banner in appbar
 
-      home: Home(),//call my home page
+      home:Scaffold(
+        appBar: AppBar(
+          title:Text('Music Player App')
+        ),
+        body:Center(
+         child: Image(
+            image: AssetImage('assets/k.jpg'),
+          )
+        )
+
+      )
+     
     );
   }
 
