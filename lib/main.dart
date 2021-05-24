@@ -38,8 +38,22 @@ class _MyAppState extends State<MyApp> {
    
       home:Scaffold(
         appBar: AppBar(
-          title:Text('Music Player App')
+          centerTitle: true,
+          title:Text('Music Player App',style:TextStyle(fontSize: 20.0)
+          ),
+          elevation: 13.0, //shadow of the bottom
+          // backgroundColor: Colors.blueAccent[1000],
+          flexibleSpace: Container(
+            decoration: BoxDecoration(
+              gradient: LinearGradient(
+                colors: [Colors.blue,Colors.black],
+                begin:Alignment.bottomLeft ,
+                end: Alignment.topLeft,
+              ),
+            ),
+          ),
         ),
+        
         body:Container(
          decoration:BoxDecoration(
             image: DecorationImage(image: 
@@ -55,7 +69,6 @@ class _MyAppState extends State<MyApp> {
             BottomNavigationBarItem(
               title: Text("Home"),
               icon: Icon(Icons.home),
-                
             ),
             BottomNavigationBarItem(
               title: Text("Add Music"),
@@ -63,9 +76,12 @@ class _MyAppState extends State<MyApp> {
             ),
 
           ],
+          elevation: 8.0,
+          backgroundColor: Colors.black12,
         ),
 
       )
+      
      
     );
   }
