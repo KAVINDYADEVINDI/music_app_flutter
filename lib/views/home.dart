@@ -10,17 +10,14 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
      return Scaffold( //it has appbar,body
           appBar: AppBar(
-            title: Text("todo",style: TextStyle(fontSize: 25.0,fontFamily: "RaleWay"),),
+            title: Text("Newz",style: TextStyle(fontSize: 28.0),),
             leading: IconButton(
               icon: Icon(Icons.menu),
               onPressed: (){},
             ),
 
             actions: [
-              IconButton(
-                icon: Icon(Icons.search),//search button
-                onPressed: (){},
-              ),
+              
 
               IconButton(
                 icon: Icon(Icons.more_vert),
@@ -29,9 +26,8 @@ class _HomeState extends State<Home> {
             ],//widget array
 
             //set back image in background of appbar
-            flexibleSpace: Icon(
-              Icons.photo_camera,
-              size: 75.0,
+            flexibleSpace:Image(
+              image:AssetImage('assets/k.png')
             ),
            
           //set bottom
