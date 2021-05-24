@@ -1,8 +1,13 @@
+import 'package:first_app/views/upload.dart';
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(MyApp());  
-}
+
+import 'views/home.dart';
+import 'views/upload.dart';
+
+void main() => runApp(
+   MyApp(), // Wrap your app
+);
 
 class MyApp extends StatefulWidget {
   @override
@@ -11,16 +16,18 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   int currentindex=0;
+  List tabs=[
+    Home(),
+    Upload(),
+  ];
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      // Add the builder here
       theme: ThemeData(
         // Define the default brightness and colors.
-        brightness: Brightness.dark,
-        primaryColor: Colors.lightBlue[800],
-        accentColor: Colors.cyan[600],
-
+        brightness: Brightness.light,
         // Define the default font family.
         fontFamily: 'Georgia',
 
@@ -54,14 +61,15 @@ class _MyAppState extends State<MyApp> {
           ),
         ),
         
-        body:Container(
-         decoration:BoxDecoration(
-            image: DecorationImage(image: 
-              AssetImage('assets/k.jpg'),
-              fit: BoxFit.cover,
-            ),
-          )
-        ) ,
+        body: tabs[currentindex],
+        // body:Container(
+        //  decoration:BoxDecoration(
+        //     image: DecorationImage(image: 
+        //       AssetImage('assets/k.jpg'),
+        //       fit: BoxFit.cover,
+        //     ),
+        //   )
+        // ) ,
 
         bottomNavigationBar: BottomNavigationBar(
           currentIndex: currentindex,
@@ -76,7 +84,13 @@ class _MyAppState extends State<MyApp> {
             ),
 
           ],
-          backgroundColor: Colors.black87,
+          onTap:(index){
+            setState(() {
+              currentindex=index;          
+            });
+            
+          } ,
+         
         ),
 
       )
