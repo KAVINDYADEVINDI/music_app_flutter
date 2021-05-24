@@ -76,8 +76,7 @@ class _MyAppState extends State<MyApp> {
             ),
 
           ],
-          elevation: 8.0,
-          backgroundColor: Colors.black12,
+          backgroundColor: Colors.black87,
         ),
 
       )
