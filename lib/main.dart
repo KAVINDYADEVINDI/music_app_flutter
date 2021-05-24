@@ -40,18 +40,22 @@ class _MyAppState extends State<MyApp> {
         appBar: AppBar(
           title:Text('Music Player App')
         ),
-        body:Center(
-         child: 
-           Image.asset('assets/k.jpg',fit: BoxFit.cover,),
-          
-        ),
+        body:Container(
+         decoration:BoxDecoration(
+            image: DecorationImage(image: 
+              AssetImage('assets/k.jpg'),
+              fit: BoxFit.cover,
+            ),
+          )
+        ) ,
 
         bottomNavigationBar: BottomNavigationBar(
           currentIndex: currentindex,
           items: [
             BottomNavigationBarItem(
               title: Text("Home"),
-              icon: Icon(Icons.home),  
+              icon: Icon(Icons.home),
+                
             ),
             BottomNavigationBarItem(
               title: Text("Add Music"),
