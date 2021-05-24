@@ -1,12 +1,17 @@
 import 'package:flutter/material.dart';
-import 'views/home.dart';
 
 void main() {
   runApp(MyApp());  
 }
 
-class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
+class MyApp extends StatefulWidget {
+  @override
+  _MyAppState createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  int currentindex=0;
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -30,19 +35,34 @@ class MyApp extends StatelessWidget {
 
       debugShowCheckedModeBanner:false ,//delete banner in appbar
 
+   
       home:Scaffold(
         appBar: AppBar(
           title:Text('Music Player App')
         ),
         body:Center(
-         child: Image(
-            image: AssetImage('assets/k.jpg'),
-          )
-        )
+         child: 
+           Image.asset('assets/k.jpg',fit: BoxFit.cover,),
+          
+        ),
+
+        bottomNavigationBar: BottomNavigationBar(
+          currentIndex: currentindex,
+          items: [
+            BottomNavigationBarItem(
+              title: Text("Home"),
+              icon: Icon(Icons.home),  
+            ),
+            BottomNavigationBarItem(
+              title: Text("Add Music"),
+              icon: Icon(Icons.cloud_upload),  
+            ),
+
+          ],
+        ),
 
       )
      
     );
   }
-
 }
